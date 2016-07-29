@@ -1,4 +1,2 @@
-.gradle/*
-src/main/java/hello/.gradle/*
-build/*
-src/main/java/hello/build/*
+.gradle
+build
