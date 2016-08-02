@@ -1,4 +1,3 @@
 test:
   override:
-    - testfiles=$(find ./*/src/test/* -name '*.java' | sort | awk "NR % ${CIRCLE_NODE_TOTAL} == ${CIRCLE_NODE_INDEX}")
-    - test-runner $testfiles
+    - ./script.sh 
