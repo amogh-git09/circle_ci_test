@@ -3,6 +3,6 @@ test:
     - gradle test:
         parallel: true
         files:
-          - module1/src/test/**/*
-          - module2/src/test/**/*
-          - module3/src/test/**/*
+          - module1/src/test/java/*
+          - module2/src/test/java/*
+          - module3/src/test/java/*
