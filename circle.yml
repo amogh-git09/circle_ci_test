@@ -1,1 +1,6 @@
-
+test:
+  override:
+    - gradle test
+        parallel: true
+        files:
+          - **/test/**/*  
