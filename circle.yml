@@ -1,4 +1,4 @@
 test:
   override:
-    - case $CIRCLE_NODE_INDEX in 0) gradle :module1:test ;; 1) gradle :module2:test ;; 2) gradle :module3:test ;; esac:
-        parallel: true
+    - testfiles=$(find ./*/src/test/* -name '*.java' | sort | awk "NR % ${CIRCLE_NODE_TOTAL} == ${CIRCLE_NODE_INDEX")
+    - test-runner $testfiles
