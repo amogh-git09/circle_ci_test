@@ -1,2 +1,4 @@
 test:
-  override: 
+  override:
+    - case $CIRCLE_NODE_INDEX in 0) gradle :module1:test ;; 1) npm test ;; esac:
+        parallel: true

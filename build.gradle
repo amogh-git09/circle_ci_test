@@ -1,3 +1,8 @@
 allprojects {
   apply plugin: 'java'
 }
+subprojects {
+  tasks.withType(Test) {
+    maxParallelForks = 3
+  }
+}
