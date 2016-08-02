@@ -1,4 +1,4 @@
 test:
   override:
-    - ./script.sh:
+    - ./script.sh
         parallel:true
