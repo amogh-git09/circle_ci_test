@@ -1,6 +1,6 @@
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-import hello.Arithmetic;
+import module2.hello.Arithmetic;
 
 public class MyTests {
   @Test

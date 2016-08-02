@@ -1,4 +1,4 @@
-package hello;
+package module1.hello;
 
 public class Arithmetic {
   public int multiply(int a, int b){
