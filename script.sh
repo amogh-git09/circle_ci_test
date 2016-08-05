@@ -5,5 +5,3 @@ for module in $modules; do
   str+=":$module:test "
 done
 $str
-
-bin/rails test test/models/article_test.rb

@@ -16,7 +16,6 @@ dependencies:
     - docker-compose up -d
 
 test:
-  override:
+  pre:
     - ./script.sh:
         parallel: true
-    - bin/rails test
