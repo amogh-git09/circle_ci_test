@@ -1,4 +1,9 @@
+machine:
+  services:
+    - docker
+
 test:
   override:
+    - docker-compose up
     - ./script.sh:
         parallel: true
