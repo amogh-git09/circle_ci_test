@@ -11,7 +11,7 @@ dependencies:
     - sudo pip install docker-compose
   post:
     - docker-compose up
-    - docker-compose -d up
+    - docker-compose up -d
 
 test:
   override:
