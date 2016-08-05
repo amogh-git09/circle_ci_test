@@ -1,4 +1,6 @@
 machine:
+  pre:
+    - sudo pip install docker-compose
   services:
     - docker
   post:
