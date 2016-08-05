@@ -4,11 +4,10 @@ machine:
   services:
     - docker
   ruby:
-    version: rbx-2.3.1
+    version: ruby-2.3.1
   post:
     - sudo service mysql stop
     - sudo service redis-server stop
-
 
 dependencies:
   pre:
