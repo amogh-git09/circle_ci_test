@@ -15,7 +15,7 @@ dependencies:
   post:
     - docker-compose up -d
 
-test:
-  pre:
-    - ./script.sh:
-        parallel: true
+# test:
+#   pre:
+#     - ./script.sh:
+#         parallel: true
