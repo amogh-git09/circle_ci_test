@@ -12,6 +12,12 @@ public class Tester {
     try{
       ResultSet rs = null;
 
+      try {
+        db.makeDB("root");
+      } catch (Exception e){
+        throw e;
+      }
+
       sql = "DROP TABLE IF EXISTS employees";
       rs = db.executeQuery(sql, MySqlTest.TYPE_UPDATE);
 
