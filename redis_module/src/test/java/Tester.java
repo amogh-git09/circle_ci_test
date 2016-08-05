@@ -7,7 +7,7 @@ public class Tester {
   @Test
   public void allInOneTest() throws Exception {
     RedisTest redis = new RedisTest();
-    redis.connect();
+    redis.connect("localhost", 5001);
 
     redis.set("Amogh", "Rathore");
     System.out.println("Value for Amogh: " + redis.get("Amogh"));

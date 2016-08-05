@@ -5,8 +5,8 @@ import redis.clients.jedis.Jedis;
 public class RedisTest {
   Jedis jedis = null;
 
-  public void connect() {
-    jedis = new Jedis("localhost");
+  public void connect(String host, int port) {
+    jedis = new Jedis(host, port);
   }
 
   public void set(String key, String val){
