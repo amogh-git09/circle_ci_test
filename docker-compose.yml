@@ -6,9 +6,9 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_PASSWORD: root
     ports:
-      - "5000:3306"
+      - 3306:3306
 
   redis:
     image: redis:3.0
     ports:
-      - 5001:6379
+      - 6379:6379
