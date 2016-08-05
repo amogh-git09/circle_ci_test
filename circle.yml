@@ -5,7 +5,7 @@ machine:
     - docker
   post:
     - sudo service mysql stop
-    - sudo service redis stop
+    - sudo service redis-server stop
 
 
 dependencies:
