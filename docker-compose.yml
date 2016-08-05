@@ -5,6 +5,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_PASSWORD: root
+      MYSQL_DATABASE: rails_dev
     ports:
       - 3306:3306
 
