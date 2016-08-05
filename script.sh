@@ -7,5 +7,5 @@ done
 $str
 
 cd rails_module
-bundle install
 bin/rails test
+cd ..
