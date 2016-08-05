@@ -5,3 +5,6 @@ for module in $modules; do
   str+=":$module:test "
 done
 $str
+
+cd rails_module
+bin/rails test
