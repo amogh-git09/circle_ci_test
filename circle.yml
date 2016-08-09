@@ -11,14 +11,17 @@ machine:
     - mkdir -p ~/.my_cache
 
 dependencies:
-  pre:
-    - if [ -d "~/.my_cache/ruby-2.3.1" ]; then sudo cp -r ~/.my_cache/ruby-2.3.1 ~/.rvm/gems/ruby-2.3.1; fi
+  override:
     - sudo pip install docker-compose
-  post:
+    - if [ -d "/home/ubuntu/.my_cache/ruby-2.3.1" ]; then sudo cp -r ~/.my_cache/ruby-2.3.1 ~/.rvm/gems; fi
+    # - if [[ -e ~/.my_cache/docker/redis.tar ]]; then docker load -i ~/.my_cache/docker/redis.tar; fi
+    # - if [[ -e ~/.my_cache/docker/mysql.tar ]]; then docker load -i ~/.my_cache/docker/mysql.tar; fi
     - docker-compose up -d
-    # - (cd rails_module; bundle install;)
-    - mkdir -p ~/.my_cache/ruby-2.3.1
-    - sudo cp -r ~/.rvm/gems/ruby-2.3.1 ~/.my_cache/ruby-2.3.1
+    - mkdir -p ~/.my_cache/docker
+    # - docker save redis > ~/.my_cache/docker/redis.tar
+    # - docker save mysql > ~/.my_cache/docker/mysql.tar
+    - (cd rails_module; bundle install;)
+    - sudo cp -r ~/.rvm/gems/ruby-2.3.1 ~/.my_cache
   cache_directories:
     - ~/.my_cache
 
@@ -28,9 +31,3 @@ test:
         parallel: true
     - ./deploy_script.sh:
         parallel: true
-
-# deployment:
-#   staging:
-#     branch: master
-#     commands:
-#       - aws s3 sync deployment s3://tenma-dev-dap/circle_ci/ --delete
