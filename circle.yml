@@ -1,6 +1,5 @@
 machine:
   pre:
-    - mkdir -p ~/.my_cache
     - curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0
   services:
     - docker
@@ -9,6 +8,7 @@ machine:
   post:
     - sudo service mysql stop
     - sudo service redis-server stop
+    - mkdir -p ~/.my_cache
 
 dependencies:
   pre:
@@ -16,7 +16,7 @@ dependencies:
     - sudo pip install docker-compose
   post:
     - docker-compose up -d
-    - (cd rails_module; bundle install;)
+    # - (cd rails_module; bundle install;)
     - mkdir -p ~/.my_cache/ruby-2.3.1
     - sudo cp -r ~/.rvm/gems/ruby-2.3.1 ~/.my_cache/ruby-2.3.1
   cache_directories:
