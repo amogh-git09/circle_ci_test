@@ -20,3 +20,9 @@ test:
   override:
     - ./script.sh:
         parallel: true
+
+deployment:
+  prod:
+    branch: master
+    commands:
+      - aws s3 sync deployment_notification.txt s3://tenma-dev-dap/circle_ci/ --delete
