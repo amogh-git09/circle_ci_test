@@ -15,6 +15,7 @@ dependencies:
   post:
     - docker-compose up -d
     - (cd rails_module; bundle install;)
+    - sudo cp /var/lib/docker
 
 test:
   override:
@@ -22,7 +23,7 @@ test:
         parallel: true
 
 deployment:
-  dev:
+  staging:
     branch: master
     commands:
       - aws s3 sync deployment_notification.txt s3://tenma-dev-dap/circle_ci/ --delete
