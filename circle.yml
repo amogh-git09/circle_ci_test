@@ -16,7 +16,7 @@ dependencies:
     - sudo pip install docker-compose
   post:
     - docker-compose up -d
-    - (cd rails_module; bundle install;)
+    # - (cd rails_module; bundle install;)
     - mkdir -p ~/.my_cache/ruby-2.3.1
     - sudo cp -r ~/.rvm/gems/ruby-2.3.1 ~/.my_cache
   cache_directories:
