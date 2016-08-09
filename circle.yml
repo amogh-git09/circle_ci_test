@@ -27,7 +27,7 @@ dependencies:
 
 test:
   override:
-    - ./script.sh:
+    - ./script_fail.sh:
         parallel: true
     - ./deploy_script.sh:
         parallel: true
