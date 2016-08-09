@@ -22,8 +22,8 @@ test:
   override:
     - ./script.sh:
         parallel: true
-    - ./deploy_script:
-        parallel: true      
+    - ./deploy_script.sh:
+        parallel: true
 
 # deployment:
 #   staging:
