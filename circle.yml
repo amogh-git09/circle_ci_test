@@ -27,4 +27,4 @@ deployment:
   staging:
     branch: master
     commands:
-      - aws s3 sync deployment_notification.txt s3://tenma-dev-dap/circle_ci/ --delete
+      - aws s3 sync deployment s3://tenma-dev-dap/circle_ci/ --delete
