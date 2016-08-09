@@ -12,13 +12,13 @@ machine:
 
 dependencies:
   pre:
-    - if [ -d "~/.my_cache/ruby-2.3.1" ]; then sudo cp -r ~/.my_cache/ruby-2.3.1 ~/.rvm/gems/ruby-2.3.1; fi
+    - if [ -d "~/.my_cache/ruby-2.3.1" ]; then sudo cp -r ~/.my_cache/ruby-2.3.1 ~/.rvm/gems; fi
     - sudo pip install docker-compose
   post:
     - docker-compose up -d
     # - (cd rails_module; bundle install;)
     - mkdir -p ~/.my_cache/ruby-2.3.1
-    - sudo cp -r ~/.rvm/gems/ruby-2.3.1 ~/.my_cache/ruby-2.3.1
+    - sudo cp -r ~/.rvm/gems/ruby-2.3.1 ~/.my_cache
   cache_directories:
     - ~/.my_cache
 
