@@ -6,6 +6,6 @@ for module in $modules; do
 done
 $str
 
-cd rails_module
-bin/rails test
-cd ..
+# cd rails_module
+# bin/rails test
+# cd ..

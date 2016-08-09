@@ -14,7 +14,7 @@ dependencies:
     - sudo pip install docker-compose
   post:
     - docker-compose up -d
-    - (cd rails_module; bundle install;)
+    # - (cd rails_module; bundle install;)
   cache_directories:
     - /var/lib/docker
 
