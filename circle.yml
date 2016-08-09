@@ -18,6 +18,7 @@ dependencies:
   cache_directories:
     - /var/lib/docker
     - /home/ubuntu/.rvm/gems
+    - rails_module/.bundle
 
 test:
   override:
