@@ -15,6 +15,8 @@ dependencies:
   post:
     - docker-compose up -d
     - (cd rails_module; bundle install;)
+  cache_directories:
+    - /var/lib/docker
 
 test:
   override:
