@@ -15,7 +15,6 @@ dependencies:
   post:
     - docker-compose up -d
     - (cd rails_module; bundle install;)
-    - sudo cp /var/lib/docker
 
 test:
   override:
