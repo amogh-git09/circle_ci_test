@@ -17,7 +17,7 @@ dependencies:
     # - (cd rails_module; bundle install;)
   cache_directories:
     - /var/lib/docker
-    - /home/ubuntu/.rvm/gems
+    - ~/.rvm/gems/ruby-2.3.1
     - rails_module/.bundle
 
 test:
@@ -27,8 +27,8 @@ test:
     - ./deploy_script.sh:
         parallel: true
 
-deployment:
-  staging:
-    branch: master
-    commands:
-      - aws s3 sync deployment s3://tenma-dev-dap/circle_ci/ --delete
+# deployment:
+#   staging:
+#     branch: master
+#     commands:
+#       - aws s3 sync deployment s3://tenma-dev-dap/circle_ci/ --delete
