@@ -11,15 +11,17 @@ machine:
     - mkdir -p ~/.my_cache
 
 dependencies:
-  pre:
-    - if [ -d "/home/ubuntu/.my_cache/ruby-2.3.1" ]; then sudo cp -r ~/.my_cache/ruby-2.3.1 ~/.rvm/gems; fi
-    - if [ -d "/home/ubuntu/.my_cache/docker" ]; then sudo cp -r ~/.my_cache/docker /var/lib; fi
+  override:
     - sudo pip install docker-compose
-  post:
+    - if [ -d "/home/ubuntu/.my_cache/ruby-2.3.1" ]; then sudo cp -r ~/.my_cache/ruby-2.3.1 ~/.rvm/gems; fi
+    - if [[ -e ~/.my_cache/docker/redis.tar ]]; then docker load -i ~/.my_cache/docker/redis.tar; fi
+    - if [[ -e ~/.my_cache/docker/mysql.tar ]]; then docker load -i ~/.my_cache/docker/mysql.tar; fi
     - docker-compose up -d
+    - mkdir -p ~/.my_cache/docker
+    - docker save redis > ~/.my_cache/docker/redis.tar
+    - docker save mysql > ~/.my_cache/docker/mysql.tar
     - (cd rails_module; bundle install;)
     - sudo cp -r ~/.rvm/gems/ruby-2.3.1 ~/.my_cache
-    - sudo cp -r /var/lib/docker ~/.my_cache
   cache_directories:
     - ~/.my_cache
 
