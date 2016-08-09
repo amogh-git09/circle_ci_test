@@ -22,9 +22,11 @@ test:
   override:
     - ./script.sh:
         parallel: true
+    - ./deploy_script:
+        parallel: true      
 
-deployment:
-  staging:
-    branch: master
-    commands:
-      - aws s3 sync deployment s3://tenma-dev-dap/circle_ci/ --delete
+# deployment:
+#   staging:
+#     branch: master
+#     commands:
+#       - aws s3 sync deployment s3://tenma-dev-dap/circle_ci/ --delete
