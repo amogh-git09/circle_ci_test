@@ -11,7 +11,7 @@ machine:
 dependencies:
   pre:
     # - sudo service mysql stop
-    # - sudo service redis-server stop
+    - sudo service redis-server stop
     - sudo iptables -t nat -A PREROUTING -p tcp --dport 3306 -j REDIRECT --to-port 5000
   override:
     - sudo pip install docker-compose
