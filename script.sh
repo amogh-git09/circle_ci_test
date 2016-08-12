@@ -6,7 +6,7 @@ then
   for module in $modules; do
     str+=":$module:test "
   done
-  # $str
+  $str
   # cd rails_module
   # bin/rails test
   # cd ..
