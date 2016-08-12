@@ -6,11 +6,12 @@ machine:
   ruby:
     version: ruby-2.3.1
   post:
-    - sudo service mysql stop
-    - sudo service redis-server stop
     - mkdir -p ~/.my_cache
 
 dependencies:
+  pre:
+    - sudo service mysql stop
+    - sudo service redis-server stop
   override:
     - sudo pip install docker-compose
     - if [ -d "/home/ubuntu/.my_cache/ruby-2.3.1" ]; then sudo cp -r ~/.my_cache/ruby-2.3.1 ~/.rvm/gems; fi
