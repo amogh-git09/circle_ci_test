@@ -17,7 +17,7 @@ dependencies:
   override:
     - sudo pip install docker-compose
     - if [ -d "/home/ubuntu/.my_cache/ruby-2.3.1" ]; then sudo cp -r ~/.my_cache/ruby-2.3.1 ~/.rvm/gems; fi
-     # - if [[ -e ~/.my_cache/docker/redis.tar ]]; then docker load -i ~/.my_cache/docker/redis.tar; fi
+    # - if [[ -e ~/.my_cache/docker/redis.tar ]]; then docker load -i ~/.my_cache/docker/redis.tar; fi
     # - if [[ -e ~/.my_cache/docker/mysql.tar ]]; then docker load -i ~/.my_cache/docker/mysql.tar; fi
     - docker-compose up -d
     - mkdir -p ~/.my_cache/docker
