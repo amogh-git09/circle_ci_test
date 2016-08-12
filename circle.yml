@@ -22,7 +22,7 @@ dependencies:
     - mkdir -p ~/.my_cache/docker
     # - docker save redis > ~/.my_cache/docker/redis.tar
     # - docker save mysql > ~/.my_cache/docker/mysql.tar
-    - (cd rails_module; bundle install;)
+    # - (cd rails_module; bundle install;)
     - sudo cp -r ~/.rvm/gems/ruby-2.3.1 ~/.my_cache
   cache_directories:
     - ~/.my_cache
